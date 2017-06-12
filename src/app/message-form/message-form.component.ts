@@ -14,7 +14,7 @@ export class MessageFormComponent implements OnInit {
   private route: string;
 
   constructor(private messageService: MessageService) {
-    this.message = new MessageModel(1, "cmonmesaje", "loteur");
+    this.message = new MessageModel(1, "", "perceval");
     this.route = "1/messages";
   }
 
