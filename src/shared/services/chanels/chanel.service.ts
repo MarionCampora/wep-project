@@ -43,14 +43,14 @@ export class ChanelService {
     this.chanelList$.next(chanelList);
   }
 
-  public getChanels() {
-    this.http.get(this.url + "?page=7")
+  public getChanels(i: number) {
+    this.http.get(this.url + "?page=" + i )
       .subscribe((response) => this.extractAndUpdateChanelList(response));
   }
 
   private extractChanelAndGetChanels(response: Response): ChanelModel {
     // Je suis vide aussi ...
-    this.getChanels();
+    this.getChanels(50);
     return new ChanelModel(); // A remplacer ! On retourne ici un messageModel vide seulement pour que Typescript ne lève pas d'erreur !
   }
 
