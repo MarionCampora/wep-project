@@ -1,8 +1,11 @@
 button {
   color: #964eb7;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 button:hover {
   color: #ca90e5;
-  text-decoration: none;
 }

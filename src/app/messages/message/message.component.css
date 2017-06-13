@@ -9,3 +9,7 @@
 #msg {
   color: #5b5b5b;
 }
+
+p {
+  word-wrap: break-word;
+}
