@@ -32,14 +32,20 @@ export class ChanelService {
     this.chanelList$.next([]);
   }
 
-  public getChanels() {
-    this.http.get(this.url)
-      .subscribe((response) => this.extractAndUpdateChanelList(response));
+  public createChannel(route: string, nom: string) {
+    const finalUrl = this.url + route;
+
+    this.http.post(finalUrl, nom);
   }
 
   extractAndUpdateChanelList(response: Response) {
     const chanelList = response.json() || [];
     this.chanelList$.next(chanelList);
+  }
+
+  public getChanels() {
+    this.http.get(this.url)
+      .subscribe((response) => this.extractAndUpdateChanelList(response));
   }
 
 }
