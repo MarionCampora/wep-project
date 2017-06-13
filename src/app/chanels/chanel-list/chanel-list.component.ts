@@ -11,15 +11,21 @@ import { ChanelModel } from "../../../shared/models/ChannelModel";
 export class ChanelListComponent implements OnInit {
 
   public chanelList: ChanelModel[];
+  public i = 1;
 
   constructor(private chanelService: ChanelService) {}
 
   ngOnInit() {
     /*setInterval(() => this.messageService.getMessages(this.route), 1000);
     this.chanelService.messageList$.subscribe((messages) => this.messageList = messages);*/
-    this.chanelService.getChanels();
-    setInterval(() => this.chanelService.getChanels(), 60000);
+    this.chanelService.getChanels(this.i);
+    setInterval(() => this.chanelService.getChanels(this.i), 60000);
     this.chanelService.chanelList$.subscribe((chanels) => this.chanelList = chanels);
-
+  }
+  nextPageChanel() {
+    this.chanelService.getChanels(this.i++);
+  }
+  previousPageChanel() {
+    this.chanelService.getChanels(this.i--);
   }
 }
