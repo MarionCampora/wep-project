@@ -27,7 +27,7 @@ export class MessageListComponent implements OnInit {
    * l'initialisation simple des variables. Pour plus d'information sur le ngOnInit, il y a un lien dans le README.
    */
   ngOnInit() {
-    setInterval(() => this.messageService.getMessages(this.route), 1000);
+    //setInterval(() => this.messageService.getMessages(this.route), 1000);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
 
   }

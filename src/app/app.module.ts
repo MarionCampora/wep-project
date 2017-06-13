@@ -10,6 +10,8 @@ import { MessageFormComponent } from "./message-form";
 import { MessageService } from "../shared/services/message/message.service";
 import { ChanelFormComponent } from "./chanel-form/chanel-form.component";
 import { ChanelService } from "../shared/services/chanels/chanel.service";
+import {ChanelListComponent} from "./chanels/chanel-list/chanel-list.component";
+import {ChanelComponent} from "./chanels/chanel/chanel.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ChanelService } from "../shared/services/chanels/chanel.service";
     MessageFormComponent,
     MessageListComponent,
     MessageComponent,
-    ChanelFormComponent
+    ChanelFormComponent,
+    ChanelListComponent,
+    ChanelComponent
   ],
   imports: [
     BrowserModule,

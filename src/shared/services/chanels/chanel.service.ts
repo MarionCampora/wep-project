@@ -29,13 +29,13 @@ export class ChanelService {
   constructor(private http: Http) {
     this.url = URLSERVER;
     this.chanelList$ = new ReplaySubject(1);
-    this.chanelList$.next([]);
+    this.chanelList$.next([new ChanelModel(1)]);
   }
 
   public createChannel(route: string, nom: string) {
-    const finalUrl = this.url + route;
 
-    this.http.post(finalUrl, nom);
+    this.http.post(this.url, nom)
+      .subscribe((response) => this.extractChanelAndGetChanels(response));
   }
 
   extractAndUpdateChanelList(response: Response) {
@@ -46,6 +46,12 @@ export class ChanelService {
   public getChanels() {
     this.http.get(this.url)
       .subscribe((response) => this.extractAndUpdateChanelList(response));
+  }
+
+  private extractChanelAndGetChanels(response: Response): ChanelModel {
+    // Je suis vide aussi ...
+    this.getChanels();
+    return new ChanelModel(); // A remplacer ! On retourne ici un messageModel vide seulement pour que Typescript ne lève pas d'erreur !
   }
 
 }

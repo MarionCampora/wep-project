@@ -97,6 +97,6 @@ export class MessageService {
   private extractMessageAndGetMessages(response: Response, route: string): MessageModel {
     // Je suis vide aussi ...
     this.getMessages(route);
-    return new MessageModel(); // A remplacer ! On retourne ici un messageModel vide seulement pour que Typescript ne lève pas d'erreur !
+    return new MessageModel();
   }
 }
