@@ -32,4 +32,10 @@ export class ChanelService {
     this.chanelList$.next([]);
   }
 
+  public createChannel(route: string, nom: string) {
+    const finalUrl = this.url + route;
+
+    this.http.post(finalUrl, nom);
+  }
+
 }

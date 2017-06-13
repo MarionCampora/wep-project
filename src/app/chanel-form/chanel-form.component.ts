@@ -3,20 +3,22 @@
  */
 import { Component, OnInit } from "@angular/core";
 import {ChanelModel} from "../../shared/models/ChannelModel";
+import {ChanelService} from "../../shared/services/chanels/chanel.service";
 
 
 @Component({
-  selector: "app-message-form",
-  templateUrl: "./message-form.component.html",
-  styleUrls: ["./message-form.component.css"]
+  selector: "app-chanel-form",
+  templateUrl: "./chanel-form.component.html",
+  styleUrls: ["./chanel-form.component.css"]
 })
 export class ChanelFormComponent implements OnInit {
 
   public chanel: ChanelModel;
   private route: string;
 
-  constructor(private ChanelService: ChanelModel) {
-
+  constructor(private chanelService: ChanelService) {
+    this.route = "";
+    this.chanel = new ChanelModel(0, "");
   }
 
   ngOnInit() { }
@@ -27,7 +29,8 @@ export class ChanelFormComponent implements OnInit {
    * Cette méthode prend en paramètre la route pour envoyer un message (:id/messages avec id un entier correspondant à l'id du channel)
    * ainsi que le message à envoyer. Ce dernier correspond à l'objet MessageModel que l'utilisateur rempli à travers l'input.
    */
-  sendMessage() {
+  createChanel() {
     console.log("Click!");
+    this.chanelService.createChannel(this.route, this.chanel.name);
   }
 }
