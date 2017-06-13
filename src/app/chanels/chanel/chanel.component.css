@@ -1,3 +1,8 @@
-p {
-  color: red;
+button {
+  color: #964eb7;
+}
+
+button:hover {
+  color: #ca90e5;
+  text-decoration: none;
 }
