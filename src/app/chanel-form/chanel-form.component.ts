@@ -30,7 +30,7 @@ export class ChanelFormComponent implements OnInit {
    * ainsi que le message à envoyer. Ce dernier correspond à l'objet MessageModel que l'utilisateur rempli à travers l'input.
    */
   createChanel() {
-    console.log("Click!");
     this.chanelService.createChannel(this.chanel);
+    this.chanel = new ChanelModel(0, "");
   }
 }
