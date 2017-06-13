@@ -17,6 +17,7 @@ export class MessageService {
    * La documentation des methodes du service permet d'avoir plus d'information concernant la façon d'accèder aux messages.
    */
   private url: string;
+  public id: number;
 
   /**
    * MessageList$ est un type d'Observable particulier appelé ReplaySubject.
@@ -31,6 +32,7 @@ export class MessageService {
     this.url = URLSERVER;
     this.messageList$ = new ReplaySubject(1);
     this.messageList$.next([new MessageModel()]);
+    this.id = 1;
   }
 
   /**
@@ -43,8 +45,8 @@ export class MessageService {
    * @param route
    * @returns {Observable<R>}
    */
-  public getMessages(route: string) {
-    const finalUrl = this.url + route;
+  public getMessages() {
+    const finalUrl = this.url + this.id + "/messages";
     this.http.get(finalUrl)
       .subscribe((response) => this.extractAndUpdateMessageList(response));
   }
@@ -63,7 +65,7 @@ export class MessageService {
   public sendMessage(route: string, message: MessageModel) {
     // Je suis vide :(
     // Tu peux trouver des infos sur moi dans le README !
-    const finalUrl = this.url + route;
+    const finalUrl = this.url + this.id + route;
     this.http.post(finalUrl, message)
       .subscribe((response) => this.extractMessageAndGetMessages(response, route));
   }
@@ -96,7 +98,10 @@ export class MessageService {
    */
   private extractMessageAndGetMessages(response: Response, route: string): MessageModel {
     // Je suis vide aussi ...
-    this.getMessages(route);
+    this.getMessages();
     return new MessageModel();
+  }
+  public setId(id: number){
+    this.id = id;
   }
 }

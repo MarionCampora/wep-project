@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 import {ChanelModel} from "../../../shared/models/ChannelModel";
+import {MessageService} from "../../../shared/services/message/message.service";
 
 @Component({
   selector: "app-chanel",
@@ -10,8 +11,8 @@ import {ChanelModel} from "../../../shared/models/ChannelModel";
 export class ChanelComponent implements OnInit {
   @Input() chanel: ChanelModel;
 
-  constructor() {
-    this.chanel = new ChanelModel(0, "0", "0", "0");
+  constructor(private messageService: MessageService) {
+    // this.chanel = new ChanelModel(0, "0", "0", "0");
   }
   /**
    * Fonction ngOnInit.
@@ -22,5 +23,10 @@ export class ChanelComponent implements OnInit {
    * le faire dans le ngOnInit.
    */
   ngOnInit() { }
+
+  selectChanel(id: number) {
+    this.messageService.setId(id);
+    this.messageService.getMessages();
+  }
 
 }

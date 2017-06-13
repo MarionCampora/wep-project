@@ -12,7 +12,7 @@ export class ChanelListComponent implements OnInit {
 
   public chanelList: ChanelModel[];
 
-  constructor(private chanelService: ChanelService){}
+  constructor(private chanelService: ChanelService) {}
 
   ngOnInit() {
     /*setInterval(() => this.messageService.getMessages(this.route), 1000);
