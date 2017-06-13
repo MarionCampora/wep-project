@@ -17,7 +17,7 @@ export class ChanelListComponent implements OnInit {
 
   ngOnInit() {
     /*setInterval(() => this.messageService.getMessages(this.route), 1000);
-    this.chanelService.messageList$.subscribe((messages) => this.messageList = messages);*/
+     this.chanelService.messageList$.subscribe((messages) => this.messageList = messages);*/
     this.chanelService.getChanels(this.i);
     setInterval(() => this.chanelService.getChanels(this.i), 60000);
     this.chanelService.chanelList$.subscribe((chanels) => this.chanelList = chanels);
