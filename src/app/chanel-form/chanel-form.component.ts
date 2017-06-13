@@ -31,6 +31,6 @@ export class ChanelFormComponent implements OnInit {
    */
   createChanel() {
     console.log("Click!");
-    this.chanelService.createChannel(this.route, this.chanel.name);
+    this.chanelService.createChannel(this.chanel);
   }
 }

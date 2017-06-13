@@ -32,9 +32,9 @@ export class ChanelService {
     this.chanelList$.next([new ChanelModel(1)]);
   }
 
-  public createChannel(route: string, nom: string) {
+  public createChannel(cha: ChanelModel) {
 
-    this.http.post(this.url, nom)
+    this.http.post(this.url, cha)
       .subscribe((response) => this.extractChanelAndGetChanels(response));
   }
 
@@ -44,7 +44,7 @@ export class ChanelService {
   }
 
   public getChanels() {
-    this.http.get(this.url)
+    this.http.get(this.url + "?page=7")
       .subscribe((response) => this.extractAndUpdateChanelList(response));
   }
 
