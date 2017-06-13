@@ -13,4 +13,4 @@ import { ChanelComponent} from "./chanel.component";
   exports: [ChanelComponent],
   providers: []
 })
-export class MessageModule { }
+export class ChanelModule { }
