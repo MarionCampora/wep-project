@@ -37,9 +37,13 @@ export class MessageListComponent implements OnInit {
     this.messageService.getMessages(this.i++);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
   }
-  nexts() {
+  lasts() {
     this.i = 0;
     this.messageService.getMessages(this.i);
+    this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
+  }
+  nexts() {
+    this.messageService.getMessages(--this.i);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
   }
 }
