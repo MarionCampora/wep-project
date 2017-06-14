@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 import { MessageModel } from "../../../shared/models/MessageModel";
+import { MessageService } from "../../../shared/services/message/message.service";
 
 @Component({
   selector: "app-message",
@@ -11,7 +12,7 @@ export class MessageComponent implements OnInit {
 
   @Input() message: MessageModel;
 
-  constructor() {
+  constructor(public messageService: MessageService) {
     // this.message = new MessageModel(0, "Hello!");
   }
   /**
@@ -22,6 +23,10 @@ export class MessageComponent implements OnInit {
    * pas dans le constructeur. Si vous souhaitez manipuler votre message lors du chargement du composant, vous devez
    * le faire dans le ngOnInit.
    */
-  ngOnInit() { }
+  ngOnInit() {
+    if (this.messageService.checkYoutube(this.message.content)) {
+      this.message.content = "<iframe width=\"640\" height=\"360\" src=" + this.message.content + "></iframe>";
+    }
+  }
 
 }

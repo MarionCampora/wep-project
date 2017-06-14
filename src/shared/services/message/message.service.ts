@@ -7,6 +7,7 @@ import "rxjs/add/operator/catch";
 import { MessageModel } from "../../models/MessageModel";
 import { ReplaySubject } from "rxjs/ReplaySubject";
 import { URLSERVER } from "shared/constants/urls";
+import {isUndefined} from "util";
 
 @Injectable()
 export class MessageService {
@@ -70,7 +71,7 @@ export class MessageService {
     this.http.post(finalUrl, message)
       .subscribe((response) => this.extractMessageAndGetMessages(response, route));
   }
-  public replaceEmots(message: string): string{
+  public replaceEmots(message: string): string {
     let res = message;
     res = res.replace(/:\)/gi, "🙂");
     res = res.replace(/;\)/gi, "😉");
@@ -116,5 +117,11 @@ export class MessageService {
   }
   public setId(id: number) {
     this.id = id;
+  }
+  public checkYoutube(url: string) {
+    if (isUndefined(url)) {
+      return false;
+    }
+    return url.includes("youtube") || url.includes("youtu.be");
   }
 }

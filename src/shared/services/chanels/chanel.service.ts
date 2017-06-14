@@ -12,6 +12,7 @@ import "rxjs/add/operator/catch";
 import { ReplaySubject } from "rxjs/ReplaySubject";
 import { URLSERVER } from "shared/constants/urls";
 import {ChanelModel} from "../../models/ChannelModel";
+import {isUndefined} from "util";
 
 @Injectable()
 export class ChanelService {
@@ -53,5 +54,4 @@ export class ChanelService {
     this.getChanels(50);
     return new ChanelModel(); // A remplacer ! On retourne ici un messageModel vide seulement pour que Typescript ne lève pas d'erreur !
   }
-
 }
