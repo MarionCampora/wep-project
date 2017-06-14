@@ -29,6 +29,14 @@ export class MessageComponent implements OnInit {
       this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content.replace("watch?v=", "embed/");
       this.message.content += "></iframe>";
     }
+    if (this.messageService.checkTwitter(this.message.content)) {
+      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content;
+      this.message.content += "&output=embed></iframe>";
+    }
+    if (this.messageService.checkInsta(this.message.content)) {
+      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content;
+      this.message.content += "></iframe>";
+    }
   }
 
 }

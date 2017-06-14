@@ -6,4 +6,5 @@
   <button class="btn btn-primary" id="prev_button"(click)="prevs()" [disabled]="messageList.length != 20 && i !=1"> Previous </button>
     <button class="btn btn-primary" id="next-button" (click)="nexts()" [disabled]="i == 0"> Next </button>
   <button class="btn btn-primary" id="last-button" (click)="lasts()" [disabled]="i == 0"> Last page </button>
+    <button class="btn btn-primary" id="refresh-button" (click)="refresh()"> 🔄 </button>
   </div>
