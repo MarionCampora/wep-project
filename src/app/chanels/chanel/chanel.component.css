@@ -9,3 +9,7 @@ button {
 button:hover {
   color: #90AFC5;
 }
+
+.container{
+  text-align: center;
+}

@@ -50,8 +50,6 @@ export class ChanelService {
   }
 
   private extractChanelAndGetChanels(response: Response): ChanelModel {
-    // Je suis vide aussi ...
-    this.getChanels(50);
-    return new ChanelModel(); // A remplacer ! On retourne ici un messageModel vide seulement pour que Typescript ne lève pas d'erreur !
+    return new ChanelModel();
   }
 }
