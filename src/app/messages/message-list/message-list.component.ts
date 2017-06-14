@@ -12,6 +12,7 @@ export class MessageListComponent implements OnInit {
 
   public messageList: MessageModel[];
   private route: string;
+  public i = 0;
 
   constructor(private messageService: MessageService) {
     this.route = "/messages";
@@ -28,7 +29,21 @@ export class MessageListComponent implements OnInit {
    */
   ngOnInit() {
     // setInterval(() => this.messageService.getMessages(this.route), 1000);
+    this.messageService.getMessages(this.i);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
-
+  }
+  prevs() {
+    if (this.i === 0) { this.i++; }
+    this.messageService.getMessages(this.i++);
+    this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
+  }
+  lasts() {
+    this.i = 0;
+    this.messageService.getMessages(this.i);
+    this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
+  }
+  nexts() {
+    this.messageService.getMessages(--this.i);
+    this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
   }
 }

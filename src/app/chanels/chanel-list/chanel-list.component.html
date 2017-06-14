@@ -5,5 +5,5 @@
   <app-chanel [chanel]="currentChanel"></app-chanel>
 </div>
 
-<p><button class="btn btn-primary" id="previous-chanel" (click)="previousPageChanel()" [disabled]="i == 1">Précédent</button>
-<span>{{i}}</span><button class="btn btn-primary" id="next-chanel" (click)="nextPageChanel()" [disabled]="chanelList.length != 20 && i !=1">Suivant</button></p>
+<p><button class="btn btn-primary" id="previous-chanel" (click)="previousPageChanel()" [disabled]="i == 0">Previous</button>
+<span>{{i}}</span><button class="btn btn-primary" id="next-chanel" (click)="nextPageChanel()" [disabled]="chanelList.length != 20 && i !=0">Next</button></p>
