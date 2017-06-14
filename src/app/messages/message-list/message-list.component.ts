@@ -46,4 +46,8 @@ export class MessageListComponent implements OnInit {
     this.messageService.getMessages(--this.i);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
   }
+  refresh() {
+    this.messageService.getMessages(this.i);
+    this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
+  }
 }
