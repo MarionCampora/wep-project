@@ -2,6 +2,9 @@ h1 {
   text-align: center;
   background-color: #edc134;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   color: #FFFFFF;
 
   width: 100%;
