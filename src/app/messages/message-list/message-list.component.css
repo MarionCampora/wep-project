@@ -5,3 +5,16 @@ button{
 .input-group{
   margin:auto;
 }
+
+.input-group>* {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#refresh-button {
+  background-color: #f99511;
+}
+
+#refresh-button:hover {
+  background-color: #ffb759;
+}

@@ -2,3 +2,11 @@ div {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+button {
+  background-color: #02930f;
+}
+
+button:hover {
+  background-color: #23ed35;
+}

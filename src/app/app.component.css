@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  background-color: #763626;
+  background-color: #b23010;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -25,11 +25,7 @@ h1 {
 }
 
 h3 {
-  color: #763626;
+  color: #b23010;
   text-align: center;
   margin-top: 10px;
-}
-
-.container{
-  text-align: center;
 }

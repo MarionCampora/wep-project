@@ -26,8 +26,12 @@ export class MessageComponent implements OnInit {
    */
   ngOnInit() {
     if (this.messageService.checkYoutube(this.message.content)) {
-      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content.replace("watch?v=", "embed/");
-      this.message.content += "></iframe>";
+      const idY = this.messageService.getYoutubeId(this.message.content);
+      if (idY.length > 1) {
+        this.message.content += "<br><iframe width=\"640\" height=\"360\" src=\"" + "https://www.youtube.com/embed/" + idY;
+        this.message.content += "\"></iframe>";
+        console.log(this.message.content);
+      }
     }
     if (this.messageService.checkTwitter(this.message.content)) {
       this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content;

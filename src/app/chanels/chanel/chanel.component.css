@@ -1,5 +1,5 @@
 button {
-  color: #336B87;
+  color: #6c8fd1;
   width: 100%;
   text-align: left;
   overflow: hidden;
@@ -7,7 +7,7 @@ button {
 }
 
 button:hover {
-  color: #90AFC5;
+  color: #a0c2db;
 }
 
 .container{

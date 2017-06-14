@@ -122,7 +122,16 @@ export class MessageService {
     if (isUndefined(url)) {
       return false;
     }
-    return url.includes("youtube") || url.includes("youtu.be");
+    const a = url.includes("youtube.com/");
+    const b = url.includes("youtu.be/");
+    const c = url.includes("v=");
+    return (a || b) && c;
+  }
+  public getYoutubeId(url: string){
+    const regex = new RegExp(/(?:\?v=)([^&]+)(?:\&)*/);
+    const matches = regex.exec(url);
+
+    return matches[1];
   }
   public checkTwitter(url: string) {
     if (isUndefined(url)) {
