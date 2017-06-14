@@ -66,16 +66,21 @@ export class MessageService {
     // Je suis vide :(
     // Tu peux trouver des infos sur moi dans le README !
     const finalUrl = this.url + this.id + route;
-    message.setContent(message.content.replace(":)", "🙂"));
-    message.setContent(message.content.replace(";)", "😉"));
-    message.setContent(message.content.replace(":'(", "😪"));
-    message.setContent(message.content.replace(":(", "🙁"));
-    message.setContent(message.content.replace(":D", "😃"));
-    message.setContent(message.content.replace(":p", "😛"));
-    message.setContent(message.content.replace("<3", "❤️"));
-    message.setContent(message.content.replace(":o", "😮"));
+    message.setContent(this.replaceEmots(message.content));
     this.http.post(finalUrl, message)
       .subscribe((response) => this.extractMessageAndGetMessages(response, route));
+  }
+  public replaceEmots(message: string): string{
+    let res = message;
+    res = res.replace(/:\)/gi, "🙂");
+    res = res.replace(/;\)/gi, "😉");
+    res = res.replace(/:'\(/gi, "😪");
+    res = res.replace(/:\(/gi, "🙁");
+    res = res.replace(/:D/gi, "😃");
+    res = res.replace(/:p/gi, "😛");
+    res = res.replace(/<3/gi, "❤️");
+    res = res.replace(/:o/gi, "😮");
+    return res;
   }
 
   /**
