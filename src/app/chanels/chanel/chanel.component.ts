@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 
 import {ChanelModel} from "../../../shared/models/ChannelModel";
 import {MessageService} from "../../../shared/services/message/message.service";
+import {AppComponent} from "../../app.component";
 
 @Component({
   selector: "app-chanel",
@@ -27,6 +28,7 @@ export class ChanelComponent implements OnInit {
   selectChanel(id: number) {
     this.messageService.setId(id);
     this.messageService.getMessages(0);
+    AppComponent.updateTitle(this.chanel.name);
   }
 
 }

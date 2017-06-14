@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import {Component, Input} from "@angular/core";
 import { Observable } from "rxjs/Observable";
 
 @Component({
@@ -8,10 +8,18 @@ import { Observable } from "rxjs/Observable";
 })
 export class AppComponent {
 
-  public title: string;
+  private static title = "Chat Groupe P";
+
+  public static updateTitle(newT: string): void {
+    this.title = newT;
+    console.log(this.title);
+    console.log(newT);
+  }
 
   constructor() {
-    this.title = "Chat";
     Observable.create();
+  }
+  staticGetTitle(): string {
+    return AppComponent.title;
   }
 }
