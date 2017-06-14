@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 
 @Component({
@@ -8,12 +8,10 @@ import { Observable } from "rxjs/Observable";
 })
 export class AppComponent {
 
-  private static title = "Chat Groupe P";
+  private static title = "Default channel";
 
   public static updateTitle(newT: string): void {
     this.title = newT;
-    console.log(this.title);
-    console.log(newT);
   }
 
   constructor() {
