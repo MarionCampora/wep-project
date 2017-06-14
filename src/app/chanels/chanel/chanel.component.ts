@@ -26,7 +26,7 @@ export class ChanelComponent implements OnInit {
 
   selectChanel(id: number) {
     this.messageService.setId(id);
-    this.messageService.getMessages();
+    this.messageService.getMessages(0);
   }
 
 }

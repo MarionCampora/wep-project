@@ -32,7 +32,7 @@ export class MessageService {
     this.url = URLSERVER;
     this.messageList$ = new ReplaySubject(1);
     this.messageList$.next([new MessageModel()]);
-    this.id = 1;
+    this.id = 570;
   }
 
   /**
@@ -45,8 +45,8 @@ export class MessageService {
    * @param route
    * @returns {Observable<R>}
    */
-  public getMessages() {
-    const finalUrl = this.url + this.id + "/messages";
+  public getMessages(i: number) {
+    const finalUrl = this.url + this.id + "/messages?page=" + i;
     this.http.get(finalUrl)
       .subscribe((response) => this.extractAndUpdateMessageList(response));
   }
@@ -98,10 +98,10 @@ export class MessageService {
    */
   private extractMessageAndGetMessages(response: Response, route: string): MessageModel {
     // Je suis vide aussi ...
-    this.getMessages();
+    this.getMessages(0);
     return new MessageModel();
   }
-  public setId(id: number){
+  public setId(id: number) {
     this.id = id;
   }
 }

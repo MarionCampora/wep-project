@@ -1,8 +1,8 @@
 
-<!-- On boucle sur tous les messages de notre liste de messages stockés dans messageList -->
   <div *ngFor="let currentMessage of messageList.reverse() ">
-  <!--CurrentMessage est le message courant dans la boucle -->
-  <!--On donne notre message courant en Input (en entrée, parametre) du composant Message qui va lui l'afficher.-->
     <app-message [message]="currentMessage"></app-message>
   </div>
-
+  <div class="input-group">
+  <button class="btn btn-primary" id="prev_button"(click)="prevs()" [disabled]="messageList.length != 20 && i !=1"> Previous </button>
+  <button class="btn btn-primary" id="next-button" (click)="nexts()" [disabled]="i == 0"> Last page </button>
+  </div>
