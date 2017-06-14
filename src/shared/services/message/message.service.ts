@@ -66,6 +66,14 @@ export class MessageService {
     // Je suis vide :(
     // Tu peux trouver des infos sur moi dans le README !
     const finalUrl = this.url + this.id + route;
+    message.setContent(message.content.replace(":)", "🙂"));
+    message.setContent(message.content.replace(";)", "😉"));
+    message.setContent(message.content.replace(":'(", "😪"));
+    message.setContent(message.content.replace(":(", "🙁"));
+    message.setContent(message.content.replace(":D", "😃"));
+    message.setContent(message.content.replace(":p", "😛"));
+    message.setContent(message.content.replace("<3", "❤️"));
+    message.setContent(message.content.replace(":o", "😮"));
     this.http.post(finalUrl, message)
       .subscribe((response) => this.extractMessageAndGetMessages(response, route));
   }
