@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  background-color: #edc134;
+  background-color: #763626;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -17,15 +17,15 @@ h1 {
 }
 
 #mainChat {
-  background-color: #cccccc;
+  background-color: #ffffff;
 }
 
 #channelBar {
-  background-color: #3a0b1c;
+  background-color: #2A3132;
 }
 
 h3 {
-  color: #d6a700;
+  color: #763626;
   text-align: center;
   margin-top: 10px;
 }

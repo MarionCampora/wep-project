@@ -1,5 +1,5 @@
 button {
-  color: #edc134;
+  color: #336B87;
   width: 100%;
   text-align: left;
   overflow: hidden;
@@ -7,5 +7,5 @@ button {
 }
 
 button:hover {
-  color: #ff8b07;
+  color: #90AFC5;
 }
