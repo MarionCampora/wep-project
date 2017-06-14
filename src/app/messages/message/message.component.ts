@@ -26,7 +26,8 @@ export class MessageComponent implements OnInit {
    */
   ngOnInit() {
     if (this.messageService.checkYoutube(this.message.content)) {
-      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content.replace("watch?v=", "embed/") + "></iframe>";
+      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content.replace("watch?v=", "embed/");
+      this.message.createdAt += "></iframe>";
     }
   }
 

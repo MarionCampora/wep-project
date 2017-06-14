@@ -124,4 +124,17 @@ export class MessageService {
     }
     return url.includes("youtube") || url.includes("youtu.be");
   }
+  public checkTwitter(url: string) {
+    if (isUndefined(url)) {
+      return false;
+    }
+    return url.includes("twitter");
+  }
+  public checkInsta(url: string) {
+
+    if (isUndefined(url)) {
+      return false;
+    }
+    return url.includes("instagram");
+  }
 }
