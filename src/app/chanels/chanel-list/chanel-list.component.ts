@@ -11,7 +11,7 @@ import { ChanelModel } from "../../../shared/models/ChannelModel";
 export class ChanelListComponent implements OnInit {
 
   public chanelList: ChanelModel[];
-  public i = 1;
+  public i = 0;
 
   constructor(private chanelService: ChanelService) {}
 
@@ -23,9 +23,9 @@ export class ChanelListComponent implements OnInit {
     this.chanelService.chanelList$.subscribe((chanels) => this.chanelList = chanels);
   }
   nextPageChanel() {
-    this.chanelService.getChanels(this.i++);
+    this.chanelService.getChanels(++this.i);
   }
   previousPageChanel() {
-    this.chanelService.getChanels(this.i--);
+    this.chanelService.getChanels(--this.i);
   }
 }

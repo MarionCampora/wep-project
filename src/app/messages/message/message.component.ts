@@ -12,7 +12,7 @@ export class MessageComponent implements OnInit {
   @Input() message: MessageModel;
 
   constructor() {
-    this.message = new MessageModel(0, "Hello!");
+    // this.message = new MessageModel(0, "Hello!");
   }
   /**
    * Fonction ngOnInit.
