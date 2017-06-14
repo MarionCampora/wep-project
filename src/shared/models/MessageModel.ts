@@ -43,4 +43,7 @@ export class MessageModel {
     this.updatedAt = updatedAt;
     this.threadId =  threadId;
   }
+  public setContent(content: string) {
+   this.content = content;
+  }
 }

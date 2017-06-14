@@ -1,6 +1,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+  font-family: emotFont;
+  src: url(/assets/emotFont.ttf);
+}
+
 body {
-  font-family: 'Source sans Pro', Calibri, Tahoma, sans-serif;
 }
