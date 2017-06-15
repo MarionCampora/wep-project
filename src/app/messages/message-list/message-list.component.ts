@@ -28,8 +28,8 @@ export class MessageListComponent implements OnInit {
    * l'initialisation simple des variables. Pour plus d'information sur le ngOnInit, il y a un lien dans le README.
    */
   ngOnInit() {
-    // setInterval(() => this.messageService.getMessages(this.route), 1000);
     this.messageService.getMessages(this.i);
+    // setInterval(() => {this.messageService.messageList$.subscribe((message) => this.messageList = message); }, 2000);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
   }
   prevs() {
@@ -49,5 +49,11 @@ export class MessageListComponent implements OnInit {
   refresh() {
     this.messageService.getMessages(this.i);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
+  }
+  trackBymessage(index: number, message: MessageModel): number {
+    if (message == null) {
+      return 0;
+    }
+    return message.id;
   }
 }
