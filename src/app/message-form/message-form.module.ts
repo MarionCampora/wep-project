@@ -17,6 +17,6 @@ import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
     FormsModule,
   ],
   exports: [MessageFormComponent],
-  providers: [MessageService],
+  providers: [MessageService, UserInputPipe],
 })
 export class MessageFormModule { }

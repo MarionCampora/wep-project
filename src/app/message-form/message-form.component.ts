@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 
 import { MessageService } from "../../shared/services";
 import { MessageModel } from "../../shared/models/MessageModel";
-import {ChanelService} from "../../shared/services/chanels/chanel.service";
 import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
 
 
@@ -16,7 +15,7 @@ export class MessageFormComponent implements OnInit {
   public message: MessageModel;
   private route: string;
 
-  constructor(private messageService: MessageService, private chanelService: ChanelService) {
+  constructor(private messageService: MessageService) {
     this.message = new MessageModel(1, "", "");
     this.route = "/messages";
   }
@@ -34,5 +33,9 @@ export class MessageFormComponent implements OnInit {
     let auth: string;
     auth = this.message.from;
     this.message = new MessageModel(1, "", auth);
+  }
+
+  addEmot(char: CharacterData){
+    this.message.content = this.message.content + char;
   }
 }
