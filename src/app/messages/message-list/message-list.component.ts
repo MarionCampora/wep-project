@@ -30,9 +30,9 @@ export class MessageListComponent implements OnInit {
    */
   ngOnInit() {
     this.messageService.getMessages(this.i);
-    // IntervalObservable.create(2000).forEach(i => this.messageService.messageList$.subscribe((messages) => this.messageList = messages));
-    // setInterval(() => {this.messageService.messageList$.subscribe((message) => this.messageList = message); }, 2000);
     this.messageService.messageList$.subscribe((messages) => this.messageList = messages);
+    IntervalObservable.create(2000).forEach(i => this.messageService.getMessages(this.i));
+    // setInterval(() => {this.messageService.messageList$.subscribe((message) => this.messageList = message); }, 2000);
   }
   prevs() {
     if (this.i === 0) { this.i++; }

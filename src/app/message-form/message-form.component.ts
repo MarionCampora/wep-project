@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 
 import { MessageService } from "../../shared/services";
 import { MessageModel } from "../../shared/models/MessageModel";
-import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
 
 
 @Component({
