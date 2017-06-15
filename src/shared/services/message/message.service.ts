@@ -127,7 +127,7 @@ export class MessageService {
     const c = url.includes("v=");
     return (a || b) && c;
   }
-  public getYoutubeId(url: string){
+  public getYoutubeId(url: string) {
     const regex = new RegExp(/(?:\?v=)([^&]+)(?:\&)*/);
     const matches = regex.exec(url);
 
@@ -137,7 +137,15 @@ export class MessageService {
     if (isUndefined(url)) {
       return false;
     }
-    return url.includes("twitter");
+    const a = url.includes("twitter.com/");
+    const b = url.includes("/status/");
+    return a && b ;
+  }
+  public getTwitter(url: string) {
+    const regex = new RegExp(/^http?s:\/\/twitter\.com\/(#!\/)?(\w+)\/status(es)*\/(\d+)$/);
+    const matches = regex.exec(url);
+    console.log(matches);
+    return matches[0];
   }
   public checkInsta(url: string) {
 
