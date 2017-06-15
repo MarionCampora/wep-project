@@ -142,7 +142,7 @@ export class MessageService {
     return a && b ;
   }
   public getTwitter(url: string) {
-    const regex = new RegExp(/^http?s:\/\/twitter\.com\/(#!\/)?(\w+)\/status(es)*\/(\d+)$/);
+    const regex = new RegExp(/http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)\/status\/([0-9]+)/);
     const matches = regex.exec(url);
     console.log(matches);
     return matches[0];
