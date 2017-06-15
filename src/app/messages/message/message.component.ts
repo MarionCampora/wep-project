@@ -30,16 +30,16 @@ export class MessageComponent implements OnInit {
       if (idY.length > 1) {
         this.message.content += "<br><iframe width=\"640\" height=\"360\" src=\"" + "https://www.youtube.com/embed/" + idY;
         this.message.content += "\"></iframe>";
-        console.log(this.message.content);
       }
     }
     if (this.messageService.checkTwitter(this.message.content)) {
       const tweet = this.messageService.getTwitter(this.message.content);
-      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=http://twitframe.com/show?url=" + tweet;
+      this.message.content += "<br><iframe width=\"550\" height=\"480\" src=http://twitframe.com/show?url=" + tweet;
       this.message.content += "&output=embed></iframe>";
     }
     if (this.messageService.checkInsta(this.message.content)) {
-      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content;
+      const insta = this.messageService.getInstagram(this.message.content);
+      this.message.content += "<br><iframe width=\"430\" height=\"550\" src=https:///instagram.com/p/" + insta + "/embed/?size=t";
       this.message.content += "></iframe>";
     }
   }

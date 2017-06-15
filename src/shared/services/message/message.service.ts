@@ -123,12 +123,12 @@ export class MessageService {
       return false;
     }
     const a = url.includes("youtube.com/");
-    const b = url.includes("youtu.be/");
+    // const b = url.includes("youtu.be/");
     const c = url.includes("v=");
-    return (a || b) && c;
+    return a && c;
   }
   public getYoutubeId(url: string) {
-    const regex = new RegExp(/(?:\?v=)([^&]+)(?:\&)*/);
+    const regex = new RegExp(/(?:\?v=)([0-9A-Za-z\-]+)(?:(&))*/);
     const matches = regex.exec(url);
 
     return matches[1];
@@ -144,7 +144,7 @@ export class MessageService {
   public getTwitter(url: string) {
     const regex = new RegExp(/http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)\/status\/([0-9]+)/);
     const matches = regex.exec(url);
-    console.log(matches);
+
     return matches[0];
   }
   public checkInsta(url: string) {
@@ -152,6 +152,11 @@ export class MessageService {
     if (isUndefined(url)) {
       return false;
     }
-    return url.includes("instagram");
+    return url.includes("instagram.com/p/");
+  }
+  public getInstagram(url: string) {
+    const regex = new RegExp(/instagram.com\/p\/([0-9A-Za-z]+)\/?/);
+    const matches = regex.exec(url);
+    return matches[1];
   }
 }
