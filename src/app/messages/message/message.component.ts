@@ -34,7 +34,8 @@ export class MessageComponent implements OnInit {
       }
     }
     if (this.messageService.checkTwitter(this.message.content)) {
-      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=" + this.message.content;
+      const tweet = this.messageService.getTwitter(this.message.content);
+      this.message.content += "<br><iframe width=\"640\" height=\"360\" src=http://twitframe.com/show?url=" + tweet;
       this.message.content += "&output=embed></iframe>";
     }
     if (this.messageService.checkInsta(this.message.content)) {
