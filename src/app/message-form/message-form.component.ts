@@ -3,6 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { MessageService } from "../../shared/services";
 import { MessageModel } from "../../shared/models/MessageModel";
 import {ChanelService} from "../../shared/services/chanels/chanel.service";
+import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
+
 
 @Component({
   selector: "app-message-form",

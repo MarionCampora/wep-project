@@ -12,6 +12,7 @@ import { ChanelFormComponent } from "./chanel-form/chanel-form.component";
 import { ChanelService } from "../shared/services/chanels/chanel.service";
 import {ChanelListComponent} from "./chanels/chanel-list/chanel-list.component";
 import {ChanelComponent} from "./chanels/chanel/chanel.component";
+import {UserInputPipe} from "../shared/pipes/UserInputPipe.pipe";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ChanelComponent} from "./chanels/chanel/chanel.component";
     MessageComponent,
     ChanelFormComponent,
     ChanelListComponent,
-    ChanelComponent
+    ChanelComponent,
+    UserInputPipe
   ],
   imports: [
     BrowserModule,

@@ -4,16 +4,19 @@ import { FormsModule } from "@angular/forms";
 
 import { MessageFormComponent } from "./message-form.component";
 import { MessageService } from "../../shared/services/message/message.service";
+import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
+
 
 @NgModule({
   declarations: [
-    MessageFormComponent
+    MessageFormComponent,
+    UserInputPipe
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [MessageFormComponent],
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class MessageFormModule { }
