@@ -63,12 +63,12 @@ export class FrameComponent implements OnInit {
     if (isUndefined(this.message.content)) {
       return false;
     }
-    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))/);
+    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))( |$)/);
     const matches = regex.exec(this.message.content);
     return matches != null;
   }
   public getPicture() {
-    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))/);
+    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))( |$)/);
     const matches = regex.exec(this.message.content);
     return matches[0];
   }
