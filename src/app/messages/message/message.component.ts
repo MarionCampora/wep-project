@@ -24,5 +24,10 @@ Skip turn omposant qui prend en @Input un message. Les @Input ne sont accessible
    */
   ngOnInit() {
   }
+
+  public checkWeather() {
+    const regex = new RegExp(/\/meteo [a-zA-Z\-]+/);
+    return regex.test(this.message.content);
+  }
 }
 

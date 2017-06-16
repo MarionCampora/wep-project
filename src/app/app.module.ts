@@ -17,6 +17,7 @@ import {UserInputPipe} from "../shared/pipes/UserInputPipe.pipe";
 import {WeatherService} from "../shared/services/weather/weather.service";
 import {LinkParser} from "../shared/pipes/LinkParser.pipe";
 import {FrameComponent} from "./frames/frame.component";
+import {WeatherComponent} from "./weather/weather.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {FrameComponent} from "./frames/frame.component";
     UserInputPipe,
     LinkParser,
     FrameComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,3 +2,6 @@
   <strong><span id="auth">{{message.from}}</span><span> : </span></strong><span [innerHTML]="message.content | userInput" id="msg"></span>
   <app-frame [message]="this.message"></app-frame>
 </p>
+
+<app-weather *ngIf="checkWeather()" [message]="message" ></app-weather>
+
