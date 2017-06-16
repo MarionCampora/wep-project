@@ -22,6 +22,9 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
     this.weatherService.getWeather(this.getCity());
     this.weatherService.weather$.subscribe((weather) => this.reponse = weather.printWeather());
+    if (this.reponse === "") {
+      this.reponse = "Ville inconnue";
+    }
   }
 
   public getCity(): string {

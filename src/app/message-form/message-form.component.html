@@ -1,6 +1,6 @@
 <div>
   <input type="text" class="form-control" required [(ngModel)]="message.from" placeholder="Pseudo">
-  <textarea  class="form-control input" rows="4" required (keydown)="onKey($event)" (keyup)="withoutKey($event)" [ngModel]="message.content | userInput"  (ngModelChange)="message.content =$event" (ng-change)="update()" placeholder="Message"></textarea>
+  <textarea  class="form-control input" rows="4" required (keydown)="onKey($event)" (keyup)="withoutKey($event)" [ngModel]="message.content | userInput"  (ngModelChange)="message.content =$event" (ng-change)="update()" placeholder="Message ou commande exp: /meteo ville"></textarea>
   <button class="btn btn-primary" (click)="sendMessage()"> Send </button>
 
   <span>Emot:</span>
