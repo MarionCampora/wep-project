@@ -46,7 +46,11 @@ export class FrameComponent implements OnInit {
   public getYoutubeUrl() {
     const regex = new RegExp(/(?:\?v=)([0-9A-Za-z\-]+)(?:(&))*/);
     const matches = regex.exec(this.message.content);
-    return "https://www.youtube.com/embed/" + matches[1];
+    if (matches == null) {
+      return "https://www.youtube.com/embed/0";
+    } else {
+      return "https://www.youtube.com/embed/" + matches[1];
+    }
   }
   public checkTwitter() {
     if (isUndefined(this.message.content)) {
