@@ -1,13 +1,18 @@
 button {
-  color: #6c8fd1;
+  color: white;
   width: 100%;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-color: #336B87;
+  border-color: #336B87;
+  margin-bottom: 3px;
 }
 
 button:hover {
-  color: #a0c2db;
+  color: white;
+  background-color: #90AFC5;
+  border-color: #90AFC5;
 }
 
 .container{
