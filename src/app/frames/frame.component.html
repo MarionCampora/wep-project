@@ -8,10 +8,10 @@
 </span>
 <span *ngIf="this.placedFrame === 3">
   <br>
-  <iframe width="640" height="360" [src]="getTwitter() | linkParser"></iframe><br>
+  <iframe width="640" height="360" frameborder="no" [src]="getTwitter() | linkParser"></iframe><br>
 </span>
 <span *ngIf="this.placedFrame === 4">
   <br>
-  <iframe width="640" height="360" [src]="getInstagram() | linkParser"></iframe><br>
+  <iframe width="640" height="360" frameborder="no" [src]="getInstagram() | linkParser"></iframe><br>
 </span>
 

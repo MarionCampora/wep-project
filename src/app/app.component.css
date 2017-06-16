@@ -25,7 +25,16 @@ h1 {
 }
 
 h3 {
-  color: #b23010;
+   color: #b23010;
+   text-align: center;
+   margin-top: 10px;
+ }
+
+p{
   text-align: center;
-  margin-top: 10px;
+}
+
+.first-text {
+  color: #7c7bf2;
+  font-size: 50px;
 }
