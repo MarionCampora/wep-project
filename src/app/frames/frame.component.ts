@@ -59,4 +59,17 @@ export class FrameComponent implements OnInit {
     const matches = regex.exec(this.message.content);
     return "https:///instagram.com/p/" + matches[1] + "/embed/?size=t";
   }
+  public checkPicture() {
+    if (isUndefined(this.message.content)) {
+      return false;
+    }
+    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))/);
+    const matches = regex.exec(this.message.content);
+    return matches != null;
+  }
+  public getPicture() {
+    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))/);
+    const matches = regex.exec(this.message.content);
+    return matches[0];
+  }
 }

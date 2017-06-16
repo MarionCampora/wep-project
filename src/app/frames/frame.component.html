@@ -10,3 +10,7 @@
   <br>
   <iframe width="640" height="360" [src]="getInstagram() | linkParser"></iframe><br>
 </span>
+<span *ngIf="checkPicture()">
+  <br>
+  <img [src]="getPicture() | linkParser" /><br>
+</span>

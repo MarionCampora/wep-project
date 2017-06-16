@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 
 import { MessageModel } from "../../../shared/models/MessageModel";
-import { MessageService } from "../../../shared/services/message/message.service";
-import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: "app-message",
