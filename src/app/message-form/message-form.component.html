@@ -3,7 +3,7 @@
   <textarea  class="form-control input" rows="4" required  [ngModel]="message.content | userInput"  (ngModelChange)="message.content =$event" (ng-change)="update()" placeholder="Message"></textarea>
   <button class="btn btn-primary" (click)="sendMessage()"> Send </button>
 
-  emots:
+  <span>Emot:</span>
   <button class="btn btn-primary emots" (click)="addEmot('🙂')">🙂</button>
   <button class="btn btn-primary emots" (click)="addEmot('😉')">😉</button>
   <button class="btn btn-primary emots" (click)="addEmot('😪')">😪</button>
