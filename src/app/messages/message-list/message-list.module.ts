@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { MessageListComponent } from "./message-list.component";
 import { MessageModule } from "../message";
 import { MessageService } from "../../../shared/services";
+import {WeatherService} from "../../../shared/services/weather/weather.service";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,6 @@ import { MessageService } from "../../../shared/services";
     MessageModule
   ],
   exports: [MessageListComponent],
-  providers: [MessageService]
+  providers: [MessageService, WeatherService]
 })
 export class MessageListModule { }

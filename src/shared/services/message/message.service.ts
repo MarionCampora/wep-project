@@ -6,8 +6,10 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { MessageModel } from "../../models/MessageModel";
 import { ReplaySubject } from "rxjs/ReplaySubject";
-import { URLSERVER } from "shared/constants/urls";
+import {URLSERVER} from "shared/constants/urls";
 import {isUndefined} from "util";
+import {WeatherService} from "../weather/weather.service";
+import {WeatherModel} from "../../models/WeatherModel";
 
 
 @Injectable()
@@ -20,6 +22,7 @@ export class MessageService {
    */
   private url: string;
   public id: number;
+
 
   /**
    * MessageList$ est un type d'Observable particulier appelé ReplaySubject.

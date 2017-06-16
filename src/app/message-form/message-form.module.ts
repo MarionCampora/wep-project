@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { MessageFormComponent } from "./message-form.component";
 import { MessageService } from "../../shared/services/message/message.service";
 import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
+import {WeatherService} from "../../shared/services/weather/weather.service";
 
 
 @NgModule({
@@ -17,6 +18,6 @@ import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
     FormsModule,
   ],
   exports: [MessageFormComponent],
-  providers: [MessageService, UserInputPipe],
+  providers: [MessageService, UserInputPipe, WeatherService],
 })
 export class MessageFormModule { }
