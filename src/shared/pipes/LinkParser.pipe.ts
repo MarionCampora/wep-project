@@ -7,7 +7,7 @@ import {DomSanitizer} from "@angular/platform-browser";
   name: "linkParser"
 })
 export class LinkParser implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer){
+  constructor(private sanitizer: DomSanitizer) {
   }
   transform(value: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(value);
