@@ -50,6 +50,11 @@ export class MessageFormComponent implements OnInit {
       this.sendMessage();
     }
   }
+  withoutKey(event: any) {
+    if (event.keyCode === 13) {
+      this.message.content = "";
+    }
+  }
 
   public checkWeather(message: string) {
     const regex = new RegExp(/\/meteo [a-zA-Z\-]+/);
