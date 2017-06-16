@@ -6,22 +6,22 @@ import {WeatherService} from "../../shared/services/weather/weather.service";
 @Component({
   selector: "app-weather",
   templateUrl: "./weather.component.html",
-  styleUrls: ["./weather.component.css"]
+  styleUrls: ["./weather.component.css"],
+  providers: [WeatherService]
 })
 export class WeatherComponent implements OnInit {
 
   @Input() message: MessageModel;
-  private messageToDisplay: MessageModel;
+  private reponse: String;
 
   constructor( private weatherService: WeatherService) {
-    this.messageToDisplay = new MessageModel(0, "test", "weather");
+    this.message = new MessageModel(0, "hello");
+    this.reponse = "";
   }
 
   ngOnInit() {
     this.weatherService.getWeather(this.getCity());
-    this.weatherService.weather$.subscribe((weather) => {
-      this.messageToDisplay = (new MessageModel(this.message.id, weather.printWeather(), "weather"));
-    });
+    this.weatherService.weather$.subscribe((weather) => this.reponse = weather.printWeather());
   }
 
   public getCity(): string {
