@@ -10,6 +10,7 @@ import {isUndefined} from "util";
   styleUrls: ["./frame.component.css"]
 })
 export class FrameComponent implements OnInit {
+  protected placedFrame = 0;
 
   @Input() message: MessageModel;
   public link: string;
@@ -18,7 +19,21 @@ export class FrameComponent implements OnInit {
     this.link = "";
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if (this.checkPicture() && this.placedFrame === 0) {
+      this.placedFrame = 1;
+    }
+    if (this.checkYoutube() && this.placedFrame === 0) {
+      this.placedFrame = 2;
+    }
+    if (this.checkTwitter() && this.placedFrame === 0) {
+      this.placedFrame = 3;
+    }
+    if (this.checkInsta() && this.placedFrame === 0) {
+      this.placedFrame = 4;
+    }
+    console.log(this.placedFrame);
+  }
 
   public checkYoutube() {
     if (isUndefined(this.message.content)) {
