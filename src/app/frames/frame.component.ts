@@ -32,7 +32,6 @@ export class FrameComponent implements OnInit {
     if (this.checkInsta() && this.placedFrame === 0) {
       this.placedFrame = 4;
     }
-    console.log(this.placedFrame);
   }
 
   public checkYoutube() {
