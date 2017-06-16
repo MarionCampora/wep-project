@@ -37,7 +37,7 @@ export class MessageService {
     this.url = URLSERVER;
     this.messageList$ = new ReplaySubject(1);
     this.messageList$.next([new MessageModel()]);
-    this.id = 570;
+    this.id = 0.5;
   }
 
   /**
@@ -55,6 +55,7 @@ export class MessageService {
     this.http.get(finalUrl)
       .subscribe((response) => this.extractAndUpdateMessageList(response));
   }
+
 
   /**
    * Fonction sendMessage.

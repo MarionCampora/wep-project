@@ -28,7 +28,6 @@ export class WeatherComponent implements OnInit {
     const regex = new RegExp(/\/meteo [a-zA-Z\-]+/);
     const matches = regex.exec(this.message.content);
     const city = matches[0].split(" ");
-    console.log(city[1]);
     return city[1];
   }
 }

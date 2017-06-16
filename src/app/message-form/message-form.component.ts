@@ -39,4 +39,14 @@ export class MessageFormComponent implements OnInit {
   addEmot(chaine: String) {
     this.message.content = this.message.content + chaine;
   }
+  onKey(event: any) {
+    if (event.keyCode === 13) {
+      this.sendMessage();
+    }
+  }
+  withoutKey(event: any) {
+    if (event.keyCode === 13) {
+      this.message.content = "";
+    }
+  }
 }
