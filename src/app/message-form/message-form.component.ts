@@ -45,6 +45,11 @@ export class MessageFormComponent implements OnInit {
   addEmot(chaine: String) {
     this.message.content = this.message.content + chaine;
   }
+  onKey(event: any) {
+    if (event.keyCode === 13) {
+      this.sendMessage();
+    }
+  }
 
   public checkWeather(message: string) {
     const regex = new RegExp(/\/meteo [a-zA-Z\-]+/);
