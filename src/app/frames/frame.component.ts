@@ -55,7 +55,7 @@ export class FrameComponent implements OnInit {
     return this.message.content.includes("instagram.com/p/");
   }
   public getInstagram() {
-    const regex = new RegExp(/instagram.com\/p\/([0-9A-Za-z]+)\/?/);
+    const regex = new RegExp(/instagram.com\/p\/([0-9A-Za-z\-]+)(\/(\?[a-zA-Z0-9_\-])?)?/);
     const matches = regex.exec(this.message.content);
     return "https:///instagram.com/p/" + matches[1] + "/embed/?size=t";
   }
