@@ -30,4 +30,11 @@ h3 {
    margin-top: 10px;
  }
 
+p{
+  text-align: center;
+}
 
+.first-text {
+  color: #7c7bf2;
+  font-size: 50px;
+}
