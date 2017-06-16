@@ -1,4 +1,4 @@
 <div class="input-group">
-  <input type="text" class="form-control" id="name" required  [(ngModel)]="chanel.name" name="name" placeholder="Name for your new channel">
+  <input type="text" class="form-control" id="name" required (keydown)="onKey($event)" (keyup)="withoutKey($event)" [(ngModel)]="chanel.name" name="name" placeholder="Name for your new channel">
   <button style="margin-left: 5px;" class="btn btn-primary" (click)="createChanel()"> + </button>
 </div>
