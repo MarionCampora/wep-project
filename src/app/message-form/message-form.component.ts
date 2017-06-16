@@ -42,8 +42,8 @@ export class MessageFormComponent implements OnInit {
     this.message = new MessageModel(1, "", auth);
   }
 
-  addEmot(char: CharacterData) {
-    this.message.content = this.message.content + char;
+  addEmot(chaine: String) {
+    this.message.content = this.message.content + chaine;
   }
 
   public checkWeather(message: string) {

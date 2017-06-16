@@ -68,26 +68,10 @@ export class MessageService {
    * @param message
    */
   public sendMessage(route: string, message: MessageModel) {
-    // Je suis vide :(
-    // Tu peux trouver des infos sur moi dans le README !
     const finalUrl = this.url + this.id + route;
-    message.setContent(this.replaceEmots(message.content));
     this.http.post(finalUrl, message)
       .subscribe((response) => this.extractMessageAndGetMessages(response, route));
   }
-  public replaceEmots(message: string): string {
-    let res = message;
-    res = res.replace(/:\)/gi, "🙂");
-    res = res.replace(/;\)/gi, "😉");
-    res = res.replace(/:'\(/gi, "😪");
-    res = res.replace(/:\(/gi, "🙁");
-    res = res.replace(/:D/gi, "😃");
-    res = res.replace(/:p/gi, "😛");
-    res = res.replace(/<3/gi, "❤️");
-    res = res.replace(/:o/gi, "😮");
-    return res;
-  }
-
   /**
    * Fonction extractAndUpdateMessageList.
    * Cette fonction permet d'extraire la liste des messages de la 'response' reçue et ensuite de mettre à jour la liste
@@ -115,7 +99,6 @@ export class MessageService {
    * @returns {any|{}}
    */
   private extractMessageAndGetMessages(response: Response, route: string): MessageModel {
-    // Je suis vide aussi ...
     this.getMessages(0);
     return new MessageModel();
   }

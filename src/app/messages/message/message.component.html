@@ -1,4 +1,4 @@
 <p>
-  <strong><span id="auth">{{message.from}}</span><span> : </span></strong><span [innerHTML]="message.content" id="msg"></span>
+  <strong><span id="auth">{{message.from}}</span><span> : </span></strong><span [innerHTML]="message.content | userInput" id="msg"></span>
   <app-frame [message]="this.message"></app-frame>
 </p>
