@@ -13,8 +13,7 @@ export class MessageComponent implements OnInit {
 
   @Input() message: MessageModel;
 
-  constructor(public messageService: MessageService, private sanitizer: DomSanitizer) {
-    // this.message = new MessageModel(0, "Hello!");
+  constructor() {
   }
   /**
    * Fonction ngOnInit.
@@ -27,3 +26,4 @@ export class MessageComponent implements OnInit {
   ngOnInit() {
   }
 }
+

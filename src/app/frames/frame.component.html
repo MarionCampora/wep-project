@@ -1,0 +1,12 @@
+<span *ngIf="checkYoutube()">
+  <br>
+  <iframe width="640" height="360" [src]="getYoutubeUrl() | linkParser"></iframe><br>
+</span>
+<span *ngIf="checkTwitter()">
+  <br>
+  <iframe width="640" height="360" [src]="getTwitter() | linkParser"></iframe><br>
+</span>
+<span *ngIf="checkInsta()">
+  <br>
+  <iframe width="640" height="360" [src]="getInstagram() | linkParser"></iframe><br>
+</span>
