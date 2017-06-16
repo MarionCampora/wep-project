@@ -69,7 +69,7 @@ export class FrameComponent implements OnInit {
     return this.message.content.includes("instagram.com/p/");
   }
   public getInstagram() {
-    const regex = new RegExp(/instagram.com\/p\/([0-9A-Za-z\-]+)(\/(\?[a-zA-Z0-9_\-=&])?)?/);
+    const regex = new RegExp(/instagram.com\/p\/([0-9A-Za-z\-_]+)(\/(\?[a-zA-Z0-9_\-=&])?)?/);
     const matches = regex.exec(this.message.content);
     return "https:///instagram.com/p/" + matches[1] + "/embed/?size=t";
   }
@@ -82,7 +82,7 @@ export class FrameComponent implements OnInit {
     return matches != null;
   }
   public getPicture() {
-    const regex = new RegExp(/(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))( |$)/);
+    const regex = new RegExp(/(http)?s?:?(\/?\/?[^"']+\.(?:png|jpg|jpeg|gif|bmp|svg|PNG|JPG|JPEG|GIF|BMP|SVG))( |$)/);
     const matches = regex.exec(this.message.content);
     return matches[0];
   }
