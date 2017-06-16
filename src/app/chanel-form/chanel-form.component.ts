@@ -33,4 +33,14 @@ export class ChanelFormComponent implements OnInit {
     this.chanelService.createChannel(this.chanel);
     this.chanel = new ChanelModel(0, "");
   }
+  onKey(event: any) {
+    if (event.keyCode === 13) {
+      this.createChanel();
+    }
+  }
+  withoutKey(event: any) {
+    if (event.keyCode === 13) {
+      this.chanel.name = "";
+    }
+  }
 }
