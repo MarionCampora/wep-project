@@ -13,6 +13,7 @@ import { ChanelService } from "../shared/services/chanels/chanel.service";
 import {ChanelListComponent} from "./chanels/chanel-list/chanel-list.component";
 import {ChanelComponent} from "./chanels/chanel/chanel.component";
 import {UserInputPipe} from "../shared/pipes/UserInputPipe.pipe";
+import {WeatherService} from "../shared/services/weather/weather.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {UserInputPipe} from "../shared/pipes/UserInputPipe.pipe";
     FormsModule,
     HttpModule
   ],
-  providers: [MessageService, ChanelService],
+  providers: [MessageService, ChanelService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

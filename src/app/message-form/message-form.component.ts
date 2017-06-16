@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 import { MessageService } from "../../shared/services";
 import { MessageModel } from "../../shared/models/MessageModel";
-import {UserInputPipe} from "../../shared/pipes/UserInputPipe.pipe";
+import { WeatherModel } from "../../shared/models/WeatherModel";
+import { WeatherService } from "../../shared/services";
 
 
 @Component({
@@ -15,12 +16,16 @@ export class MessageFormComponent implements OnInit {
   public message: MessageModel;
   private route: string;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private weatherService: WeatherService) {
     this.message = new MessageModel(1, "", "");
     this.route = "/messages";
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.weatherService.weather$.subscribe((weather) => {
+      this.messageService.sendMessage(this.route, new MessageModel(this.message.id, weather.printWeather(), "weather"));
+    });
+  }
 
   /**
    * Fonction pour envoyer un message.
@@ -29,13 +34,27 @@ export class MessageFormComponent implements OnInit {
    * ainsi que le message à envoyer. Ce dernier correspond à l'objet MessageModel que l'utilisateur rempli à travers l'input.
    */
   sendMessage() {
+    if (this.checkWeather(this.message.content)) {
+      this.weatherService.getWeather(this.getCity(this.message.content));
+    }
     this.messageService.sendMessage(this.route, this.message);
     let auth: string;
     auth = this.message.from;
     this.message = new MessageModel(1, "", auth);
   }
 
-  addEmot(char: CharacterData){
+  addEmot(char: CharacterData) {
     this.message.content = this.message.content + char;
+  }
+
+  public checkWeather(message: string) {
+    const regex = new RegExp(/\/meteo [a-zA-Z\-]+/);
+    return regex.test(message);
+  }
+  public getCity(message: string): string {
+    const regex = new RegExp(/\/meteo [a-zA-Z\-]+/);
+    const matches = regex.exec(message);
+    const city = matches[0].split(" ");
+    return city[1];
   }
 }

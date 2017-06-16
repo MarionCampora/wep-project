@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { MessageComponent } from "./message.component";
+import {WeatherService} from "../../../shared/services/weather/weather.service";
 
 @NgModule({
   declarations: [
@@ -11,6 +12,6 @@ import { MessageComponent } from "./message.component";
     CommonModule
   ],
   exports: [MessageComponent],
-  providers: []
+  providers: [WeatherService]
 })
 export class MessageModule { }
