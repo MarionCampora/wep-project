@@ -11,6 +11,7 @@ import {isUndefined} from "util";
 import {WeatherService} from "../weather/weather.service";
 import {WeatherModel} from "../../models/WeatherModel";
 
+
 @Injectable()
 export class MessageService {
 
@@ -121,46 +122,4 @@ export class MessageService {
   public setId(id: number) {
     this.id = id;
   }
-  public checkYoutube(url: string) {
-    if (isUndefined(url)) {
-      return false;
-    }
-    const a = url.includes("youtube.com/");
-    // const b = url.includes("youtu.be/");
-    const c = url.includes("v=");
-    return a && c;
-  }
-  public getYoutubeId(url: string) {
-    const regex = new RegExp(/(?:\?v=)([0-9A-Za-z\-]+)(?:(&))*/);
-    const matches = regex.exec(url);
-
-    return matches[1];
-  }
-  public checkTwitter(url: string) {
-    if (isUndefined(url)) {
-      return false;
-    }
-    const a = url.includes("twitter.com/");
-    const b = url.includes("/status/");
-    return a && b ;
-  }
-  public getTwitter(url: string) {
-    const regex = new RegExp(/http(?:s)?:\/\/(?:www\.)?twitter\.com\/([a-zA-Z0-9_]+)\/status\/([0-9]+)/);
-    const matches = regex.exec(url);
-
-    return matches[0];
-  }
-  public checkInsta(url: string) {
-
-    if (isUndefined(url)) {
-      return false;
-    }
-    return url.includes("instagram.com/p/");
-  }
-  public getInstagram(url: string) {
-    const regex = new RegExp(/instagram.com\/p\/([0-9A-Za-z]+)\/?/);
-    const matches = regex.exec(url);
-    return matches[1];
-  }
-
 }
