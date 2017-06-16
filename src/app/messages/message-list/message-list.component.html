@@ -1,5 +1,5 @@
 
-  <div *ngFor="let currentMessage of messageList.reverse(); trackBy: trackBymessage()">
+  <div *ngFor="let currentMessage of messageList.reverse(); trackBy: trackBymessage">
     <app-message [message]="currentMessage"></app-message>
   </div>
   <div class="input-group">

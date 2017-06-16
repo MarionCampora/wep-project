@@ -13,6 +13,8 @@ import { ChanelService } from "../shared/services/chanels/chanel.service";
 import {ChanelListComponent} from "./chanels/chanel-list/chanel-list.component";
 import {ChanelComponent} from "./chanels/chanel/chanel.component";
 import {UserInputPipe} from "../shared/pipes/UserInputPipe.pipe";
+import {LinkParser} from "../shared/pipes/LinkParser.pipe";
+import {FrameComponent} from "./frames/frame.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {UserInputPipe} from "../shared/pipes/UserInputPipe.pipe";
     ChanelFormComponent,
     ChanelListComponent,
     ChanelComponent,
-    UserInputPipe
+    UserInputPipe,
+    LinkParser,
+    FrameComponent,
   ],
   imports: [
     BrowserModule,
